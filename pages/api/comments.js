@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request'
 
-const graphqlAPI = `https://api-eu-central-1.graphcms.com/v2/${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}/master`
+const graphqlAPI = `https://api-us-west-2.hygraph.com/v2/cljxhzpbh0q1801ui0rsd4pzt/master`
 const graphcmsToken = process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN
 
 const comments = async (req, res) => {

@@ -55,7 +55,7 @@ const Header = () => {
           </Link>
           <nav className='nav__links'>
             <NavLink name='Home' href='/' />
-            <NavLink name='Blog' href='/blog'></NavLink>
+            <NavLink name='Projects' href='/blog'></NavLink>
             <ThemeButton />
           </nav>
           <button

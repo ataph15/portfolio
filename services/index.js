@@ -1,6 +1,6 @@
 import { gql, GraphQLClient } from 'graphql-request'
 
-const graphqlAPI = `https://api-eu-central-1.graphcms.com/v2/${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}/master`
+const graphqlAPI = `https://api-us-west-2.hygraph.com/v2/cljxhzpbh0q1801ui0rsd4pzt/master`
 const graphcms = new GraphQLClient(graphqlAPI)
 
 export const getPosts = async () => {
@@ -74,29 +74,24 @@ export const getPostDetails = async (slug) => {
   return result.post
 }
 
-export const getRecentPosts = async () => {
-  const query = gql`
-  query GetPostDetails(){
-    posts(orderBy: createdAt_DESC, first: 2){
-      title
-      excerpt
-      categories {
-              name
-              slug
-           }
-      featuredImage {
-        url
-      }
-      createdAt
-      slug
-    }
-  }
-  `
+// export const getRecentPosts = async () => {
+//   const query = gql`
+//     query GetRecentPosts {
+//       posts(last: 3, orderBy: createdAt_DESC) {
+//         title
+//         featuredImage {
+//           url
+//         }
+//         createdAt
+//         slug
+//       }
+//     }
+//   `
 
-  const result = await graphcms.request(query)
+//   const result = await graphcms.request(query)
 
-  return result.posts
-}
+//   return result.posts
+// }
 
 export const getSimilarPosts = async (categories, slug) => {
   const query = gql`

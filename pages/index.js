@@ -12,9 +12,9 @@ import {
 } from '../components';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import SplitText from 'gsap/dist/SplitText';
+// import SplitText from 'gsap/dist/SplitText';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export const Home = ({ recentPosts, projects }) => {
   const windowSize = useWindowSize();
@@ -31,43 +31,43 @@ export const Home = ({ recentPosts, projects }) => {
   }, [windowSize]);
 
   // intro animation
-  useEffect(() => {
-    const split = new SplitText(document.querySelectorAll('.title'), {
-      type: 'lines',
-    });
+  // useEffect(() => {
+  //   const split = new (document.querySelectorAll('.title'), {
+  //     type: 'lines',
+  //   });
 
-    gsap.set('.title', {
-      opacity: '1',
-    });
+  //   gsap.set('.title', {
+  //     opacity: '1',
+  //   });
 
-    gsap.from(split.lines, {
-      y: '100%',
-      stagger: '0.1',
-      duration: 1.2,
-      ease: 'power3',
-      delay: 0.2,
-    });
+  //   gsap.from(split.lines, {
+  //     y: '100%',
+  //     stagger: '0.1',
+  //     duration: 1.2,
+  //     ease: 'power3',
+  //     delay: 0.2,
+  //   });
 
-    gsap.to('.hero__vector', {
-      opacity: 1,
-      duration: '1',
-      ease: 'power3',
-      delay: 0.1,
-    });
+  //   gsap.to('.hero__vector', {
+  //     opacity: 1,
+  //     duration: '1',
+  //     ease: 'power3',
+  //     delay: 0.1,
+  //   });
 
-    gsap.to('.about', {
-      translateY: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: 'power3',
-      delay: 0.1,
-    });
+  //   gsap.to('.about', {
+  //     translateY: 0,
+  //     opacity: 1,
+  //     duration: 1.2,
+  //     ease: 'power3',
+  //     delay: 0.1,
+  //   });
 
-    // kill all scroll triggers when dismounting component
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  //   // kill all scroll triggers when dismounting component
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
 
   // scroll trigger animations
   useEffect(() => {
@@ -170,24 +170,24 @@ export const Home = ({ recentPosts, projects }) => {
       <div className='home'>
         <Hero />
         <About />
-        <Projects projects={projects} />
-        <Blogs recentPosts={recentPosts} />
+        {/* <Projects projects={projects} /> */}
+        {/* <Blogs recentPosts={recentPosts} /> */}
       </div>
       <Contact />
     </>
   );
 };
 
-export const getStaticProps = async () => {
-  const recentPosts = await getRecentPosts();
-  const projects = await getProjects();
+// export const getStaticProps = async () => {
+//   const recentPosts = await getRecentPosts();
+//   const projects = await getProjects();
 
-  return {
-    props: {
-      recentPosts,
-      projects,
-    },
-  };
-};
+//   return {
+//     props: {
+//       recentPosts,
+//       projects,
+//     },
+//   };
+// };
 
 export default Home;

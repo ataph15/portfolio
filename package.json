@@ -17,7 +17,7 @@
     "glob-parent": "^6.0.2",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
-    "gsap": "npm:@gsap/shockingly@^3.10.4",
+    "gsap": "npm:@gsap/member@^3.12.2",
     "html-react-parser": "^3.0.0",
     "include-media": "^1.4.10",
     "moment": "^2.29.4",

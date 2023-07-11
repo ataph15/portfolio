@@ -10,16 +10,16 @@ const PostWidget = ({ similarPosts }) => {
   const router = useRouter()
 
   // if no similar posts, sets posts to recent posts
-  useEffect(() => {
-    if (similarPosts.length > 0) {
-      setPosts(similarPosts)
-    }
-    if (similarPosts.length === 0) {
-      getRecentPosts().then((data) => {
-        setPosts(data)
-      })
-    }
-  }, [similarPosts])
+  // useEffect(() => {
+  //   if (similarPosts.length > 0) {
+  //     setPosts(similarPosts)
+  //   }
+  //   if (similarPosts.length === 0) {
+  //     getRecentPosts().then((data) => {
+  //       setPosts(data)
+  //     })
+  //   }
+  // }, [similarPosts])
 
   return (
     <div className='post-widget'>
